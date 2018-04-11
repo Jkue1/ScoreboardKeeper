@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-
+#include <algorithm>
 using namespace std;
 
 const int MAX_PERIODS = 10;
@@ -12,6 +12,8 @@ int main()
 {
   int periods;
   int teams;
+  vector < vector <int> > scoreboard;
+  
 
   cout<<"How many competitors? ";
   cin>>teams;
@@ -27,9 +29,27 @@ int main()
   }
   else
   {
-   //make scoreboard and fill it with zeros
-  
-   //once created, display the scoreboard
-  }
+    scoreboard.resize(teams);
+    for (int row=0; row < scoreboard.size(); row++)
+    {
+            scoreboard[row].resize(periods);
+            cout<<scoreboard[row][periods]<<"|";            
+    }
+      
+        cout<<endl;
+   /* for (int row = 0; row < scoreboard.size(); row++)
+    {
+        scoreboard[row].resize(periods);
+        
+        cout<<"Player "<<row+1<<": "<<scoreboard[row][periods]<< "|\n";
+         //make scoreboard and fill it with zeros
+                
+    }
+    cout<<endl;
+   */
+   
+       //once created, display the scoreboard
+    
+   }
   return 0;
 }
