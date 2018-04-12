@@ -38,12 +38,12 @@ int main()
                 {
                         scoreboard[row].resize(periods);
                 }
-                cout<<"SCOREBARD\n";
+                cout<<"SCOREBOARD\n";
 
                 for(int c = 0; c < scoreboard.size(); c++)
                 {
                         cout<<"Player "<<c+1<<": ";   
-                        for (int j = 0; j < scoreboard.size(); j++)
+                        for (int j = 0; j < scoreboard[c].size(); j++)
                         {
                                 scoreboard[c][j] = 0;
                                 cout<<scoreboard[c][j]<<"|";
@@ -57,12 +57,12 @@ int main()
         //definition
         void printscoreboard(vector < vector<int> > grid)
         {
-                cout<<"SCOREBARD\n";
+                cout<<"SCOREBOARD\n";
 
                 for(int c = 0; c < grid.size(); c++)
                 {
                         cout<<"Player "<<c+1<<": ";   
-                        for (int j = 0; j < grid.size(); j++)
+                        for (int j = 0; j < grid[c].size(); j++)
                         {
                                 grid[c][j] = randombetween(5,5);
                                 cout<<grid[c][j]<<"|";
