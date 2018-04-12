@@ -32,19 +32,28 @@ int main()
         }
         else
         {
-               scoreboard.resize(teams);
-               
-               for (int row = 0; row < scoreboard.size(); row++)
-               {
-                    scoreboard[row].resize(periods);
-               }
+                scoreboard.resize(teams);
 
-               printscoreboard(scoreboard);
+                for (int row = 0; row < scoreboard.size(); row++)
+                {
+                        scoreboard[row].resize(periods);
+                }
+                cout<<"SCOREBARD\n";
+
+                for(int c = 0; c < scoreboard.size(); c++)
+                {
+                        cout<<"Player "<<c+1<<": ";   
+                        for (int j = 0; j < scoreboard.size(); j++)
+                        {
+                                scoreboard[c][j] = 0;
+                                cout<<scoreboard[c][j]<<"|";
+                        }
+                        cout<<endl;
+                }
+                printscoreboard(scoreboard);
+                return 0;
         }
-        
-        return 0;
 }
-
         //definition
         void printscoreboard(vector < vector<int> > grid)
         {
@@ -55,23 +64,24 @@ int main()
                         cout<<"Player "<<c+1<<": ";   
                         for (int j = 0; j < grid.size(); j++)
                         {
-                                grid[c][j] = randombetween(0,9);
+                                grid[c][j] = randombetween(5,5);
                                 cout<<grid[c][j]<<"|";
                         }
-                cout<<endl;
+                        cout<<endl;
                 }//functionhere
-                
-        }
-        int randombetween(int first,int second)
-        {
-            if (first > second)
-            {
-                return second + rand()%(first-second+1);
-            }
-            else
-            {
-                return first + rand()%(second-first+1);
-            }
 
         }
-       
+
+        int randombetween(int first,int second)
+        {
+                if (first > second)
+                {
+                        return second + rand()%(first-second+1);
+                }
+                else
+                {
+                        return first + rand()%(second-first+1);
+                }
+
+        }
+
