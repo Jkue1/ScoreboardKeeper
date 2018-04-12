@@ -4,7 +4,7 @@
 #include <ctime>
 using namespace std;
 void printscoreboard( vector < vector<int> > );
-void randombetween(int, int);
+int randombetween(int, int);
 const int MAX_PERIODS = 10;
 const int MAX_TEAMS = 4;
 const int MIN_PERIODS = 1;
@@ -38,6 +38,7 @@ int main()
                {
                     scoreboard[row].resize(periods);
                }
+
                printscoreboard(scoreboard);
         }
         
@@ -54,12 +55,14 @@ int main()
                         cout<<"Player "<<c+1<<": ";   
                         for (int j = 0; j < grid.size(); j++)
                         {
-                                grid[c][j] = 0; /*randombetween(0,9);*/
-                                cout<<grid[c][j]<<endl;
+                                grid[c][j] = randombetween(0,9);
+                                cout<<grid[c][j]<<"|";
                         }
+                cout<<endl;
                 }//functionhere
+                
         }
-        void randombetween(int first, int second)
+        int randombetween(int first,int second)
         {
             if (first > second)
             {
@@ -69,5 +72,6 @@ int main()
             {
                 return first + rand()%(second-first+1);
             }
+
         }
        
